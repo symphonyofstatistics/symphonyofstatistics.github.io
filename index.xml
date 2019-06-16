@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
   <channel>
-    <title>Symphony with Statistics</title>
-    <link>https://sidvenu.ml/</link>
-    <atom:link href="https://sidvenu.ml/index.xml" rel="self" type="application/rss+xml"/>
+    <title>The Symphony of Statistics</title>
+    <link>https://symphonyofstatistics.ml/</link>
+    <atom:link href="https://symphonyofstatistics.ml/index.xml" rel="self" type="application/rss+xml"/>
     <description>Exploring the beautiful world of statistics 
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Sun, 16 Jun 2019 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Welcome to Symphony with Statistics</title>
+      <title>Welcome to the Symphony of Statistics</title>
       <dc:creator>Siddharth Venu</dc:creator>
-      <link>https://sidvenu.ml/posts/welcome</link>
-      <description>Welcome to our new blog, Symphony with Statistics. We hope you enjoy 
+      <link>https://symphonyofstatistics.ml/posts/welcome</link>
+      <description>Welcome to our new blog, the Symphony of Statistics. We hope you enjoy 
 reading what we have to say!</description>
-      <guid>https://sidvenu.ml/posts/welcome</guid>
+      <guid>https://symphonyofstatistics.ml/posts/welcome</guid>
       <pubDate>Sun, 16 Jun 2019 00:00:00 +0000</pubDate>
     </item>
   </channel>
