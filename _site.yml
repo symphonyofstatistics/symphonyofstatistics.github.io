@@ -1,0 +1,24 @@
+name: "Symphony with Statistics"
+title: "Symphony with Statistics"
+description: |
+  Exploring the beautiful world of statistics 
+output_dir: "."
+base_url: https://sidvenu.ml/
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+    - icon: fa fa-rss
+      href: index.xml
+output: 
+  distill::distill_article:
+    css: css/hideSource.css
+    js: js/hideSource.js
+collections:
+  posts:
+    disqus: symphonywithstatistics
+    share: [linkedin, twitter, facebook]
+    subscribe: _subscribe.html
+    citations: false

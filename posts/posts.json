@@ -1,0 +1,17 @@
+[
+  {
+    "path": "posts/welcome/",
+    "title": "Welcome to Symphony with Statistics",
+    "description": "Welcome to our new blog, Symphony with Statistics. We hope you enjoy \nreading what we have to say!",
+    "author": [
+      {
+        "name": "Siddharth Venu",
+        "url": "https://sidvenu.ml"
+      }
+    ],
+    "date": "2019-06-16",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-06-15T13:04:45+05:30"
+  }
+]

@@ -1,0 +1,142 @@
+---
+title: "Mean, Median and Mode in cases of skewed distributions"
+description: |
+  A comprehensive explanation of the relationships between the measures of central tendency in skewed distributions
+author:
+  - name: Siddharth Venu
+    url: https://www.linkedin.com/in/sidvenu/
+date: 06-17-2019
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, dpi=600, tidy = TRUE)
+
+# load packages that help in data wrangling and visualisation
+library(dplyr)
+library(ggplot2)
+
+plot_label <- function(xVal,yVal,colourVal, labelVal){
+    return(geom_text(aes(x=xVal, y=yVal, label=labelVal), colour=colourVal, angle="90", size=3))
+}
+plot_line <- function(xVal,colourVal){
+    return(geom_vline(xintercept = xVal, colour=colourVal))
+}
+```
+
+I remember when I first got introduced to skewed distributions, and I couldn't get my head around with the relationship between mean, median and mode in these cases. This post will help you appreciate the same with the use of both ideal skewed distributions and using real world datasets.
+
+## Functions producing skewed distributions
+
+An example of a *right skewed distribution* (where the long tail is on the right) is the *lognormal* distribution. If a random variable $Y$ is a normal distribution, then $X=e^Y$ will be a lognormal distribution. Similarly, if $Y$ is a lognormal distribution, then $X=\ln{Y}$ will be a normal distribution.
+
+Let us look at a lognormal distribution with $\mu=0$ and $\sigma=1$, where $\mu$ and $\sigma$ doesn't represent the actual mean and standard deviation of this distribution, but rather the mean and standard deviation of it's corresponding normal distribution.
+
+``` {r lognormal_distribution}
+x=seq(0,100,0.01)
+y=dlnorm(x, meanlog=0, sdlog=1)
+plot <- ggplot()+aes(x,y)+geom_line()
+
+meanValue = sum(x*y)/sum(y)
+ySum = sum(y)
+curSum = 0
+for (i in 1:length(y)){
+    curSum=curSum+y[i]
+    if(curSum >= ySum/2)
+        break;
+}
+medianValue = x[i]
+for(i in 1:length(y))
+  if(i!=1 && y[i]>y[i+1] && y[i]>y[i-1])
+    break;
+modeValue = x[i]
+
+plot <- plot+
+  plot_line(meanValue, "blue")+plot_label(meanValue, 0.2, "blue", "Mean\n")+
+  plot_line(medianValue, "red")+plot_label(medianValue, 0.2, "red", "Median\n")+
+  plot_line(modeValue, "magenta")+plot_label(modeValue, 0.2, "magenta", "Mode\n")+
+  xlim(0,5)
+
+plot
+```
+
+The above distribution's mean was found out to be $`r round(meanValue,2)`$, median was found out to be $`r round(medianValue,2)`$, and mode was found out to be $`r round(modeValue,2)`$.
+
+This follows the rule $\text{mode}<\text{median}<\text{mean}$.
+
+Do all right skewed distributions follow this rule? No. There are exceptions to this rule. However, they _usually_ follow this rule. Why is that so? Here is a geometrical approach to know how this rule was formed.
+
+Here you go:
+
+```{r symmetric_distribution}
+x=seq(-5,5,0.01)
+y=dnorm(x, mean = 0, sd = 1)
+plot <- ggplot()+aes(x,y)+geom_line() +
+  plot_line(0, "red")+plot_label(0, 0.2, "red", "Mean, Median, Mode\n")
+plot
+```
+
+A good ol' normal distribution.
+
+Let us say you're adding a number of values to the right side of this distribution, distributing it in such a way that it creates a *tail* in the right side. Observe how the measures of central tendency shifts:
+
+* The mode will stay at the exact same place, since the global maxima won't change by adding a few values to the right tail of the distribution.
+* The median, however, will shift by the *number* of values you're adding to the right.
+* The mean will shift more than the median (imagine adding a number comparably very large than the total number of values we have in the set).
+
+To summarise, adding this *tail* of sorts to the right will cause the mean to be greater than the median, which in turn will be greater than the mode. In conclusion, the rule $\text{mode}<\text{median}<\text{mean}$ is followed for distributions with a right tail, i.e., right skewed distributions.
+
+The same can be extended to left skewed distributions as well, which I would let you figure out why on your own. 
+
+## Real world datasets
+
+Let us now see a few examples of skewed distributions in the real world using datasets.
+
+
+### The Canadian Survey of Labour and Income Dynamics
+
+The SLID data frame has 7425 rows and 5 columns. The data are from the 1994 wave of the Canadian Survey of Labour and Income Dynamics, for the province of Ontario. There are missing data, particularly for wages^[[Rdatasets](http://vincentarelbundock.github.io/Rdatasets/doc/carData/SLID.html) by vincentarelbundock].
+
+```{r slid_load_dataset}
+# load SLID dataset
+income <- read.csv("SLID.csv", header = TRUE)
+```
+
+The SLID dataset is represented as the following:
+
+```{r display_dataset, layout="l-body-outset"}
+library(rmarkdown)
+paged_table(income)
+```
+
+
+In this dataset, **wages** represent the hourly wage of surveyed Canadian labourers, in Canadian Dollars, and **education** represent the number of years of schooling the labourers got. The rest of the features are self-explanatory.
+
+Let us plot the **wages** data on a histogram and see it's mean, median and mode.
+
+```{r plot_data}
+wages <- na.omit(income$wages)
+
+plot <- ggplot()+aes(wages)+geom_histogram(bins=50)
+highest_bin <- arrange(ggplot_build(plot)$data[[1]],desc(y))[1,]
+
+meanIncome <- mean(wages)
+medianIncome <- median(wages)
+modeIncome <- highest_bin$x
+
+plot <- plot+
+  plot_line(meanIncome, "blue")+plot_label(meanIncome, 400, "blue", "\nMean")+
+  plot_line(medianIncome, "red")+plot_label(medianIncome, 400, "red", "Median\n")+
+  plot_line(modeIncome, "magenta")+plot_label(modeIncome, 400, "magenta", "Mode\n\n")
+
+plot
+```
+If we analyse the graph, we can find that the tallest bin has the (approx.) range $(`r round(highest_bin$xmin, 2)`,`r round(highest_bin$xmax, 2)`)$. Thus, we can say that the *mode* is $`r round(modeIncome, 2)`$. The *median* of the graph turns out to be $`r round(medianIncome, 2)`$, and the *mean* turns out to be $`r round(meanIncome, 2)`$.
+
+We can see that this is a *right skewed distribution*, since the long tail is at the right, or towards the positive side of the x-axis. And the relationship between the measures of central tendency in this dataset is $\text{mode}<\text{median}<\text{mean}$, just like in a *typical* right skewed distribution.
+
+## Source Code {.appendix}
+This blog uses Distill for R Markdown to process the source code in R, and to render the output to a HTML document. You can find the source R Markdown file [here](https://github.com/sidvenu/sidvenu.github.io/tree/master/_posts).
