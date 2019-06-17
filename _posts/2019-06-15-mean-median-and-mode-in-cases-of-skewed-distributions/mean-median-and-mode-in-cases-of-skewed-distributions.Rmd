@@ -5,19 +5,22 @@ description: |
 author:
   - name: Siddharth Venu
     url: https://www.linkedin.com/in/sidvenu/
-date: 06-17-2019
+date: 06-18-2019
 output:
   distill::distill_article:
     self_contained: false
+creative_commons: CC BY-NC
+repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
 draft: true
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE, dpi=600, tidy = TRUE)
+knitr::opts_chunk$set(echo = FALSE, tidy = TRUE)
 
 # load packages that help in data wrangling and visualisation
 library(dplyr)
 library(ggplot2)
+library(plotly)
 
 plot_label <- function(xVal,yVal,colourVal, labelVal){
     return(geom_text(aes(x=xVal, y=yVal, label=labelVal), colour=colourVal, angle="90", size=3))
@@ -35,35 +38,45 @@ An example of a *right skewed distribution* (where the long tail is on the right
 
 Let us look at a lognormal distribution with $\mu=0$ and $\sigma=1$, where $\mu$ and $\sigma$ doesn't represent the actual mean and standard deviation of this distribution, but rather the mean and standard deviation of it's corresponding normal distribution.
 
-``` {r lognormal_distribution}
-x=seq(0,100,0.01)
-y=dlnorm(x, meanlog=0, sdlog=1)
-plot <- ggplot()+aes(x,y)+geom_line()
+``` {r lognormal_distribution, preview=TRUE}
+dist_data = data.frame(x=seq(0,100,0.01),y=dlnorm(seq(0,100,0.01), meanlog=0, sdlog=1))
 
-meanValue = sum(x*y)/sum(y)
-ySum = sum(y)
-curSum = 0
-for (i in 1:length(y)){
-    curSum=curSum+y[i]
-    if(curSum >= ySum/2)
-        break;
-}
-medianValue = x[i]
-for(i in 1:length(y))
-  if(i!=1 && y[i]>y[i+1] && y[i]>y[i-1])
+meanValue = sum(dist_data$x*dist_data$y)/sum(dist_data$y)
+for(meanIndex in 1:length(dist_data$x)){
+  if(dist_data$x[meanIndex]>=meanValue)
     break;
-modeValue = x[i]
+}
 
-plot <- plot+
-  plot_line(meanValue, "blue")+plot_label(meanValue, 0.2, "blue", "Mean\n")+
-  plot_line(medianValue, "red")+plot_label(medianValue, 0.2, "red", "Median\n")+
-  plot_line(modeValue, "magenta")+plot_label(modeValue, 0.2, "magenta", "Mode\n")+
-  xlim(0,5)
+ySum = sum(dist_data$y)
+curSum = 0
+for (i in 1:length(dist_data$y)){
+  curSum=curSum+dist_data$y[i]
+  if(curSum >= ySum/2)
+      break;
+}
+medianIndex = i
 
-plot
+for(i in 1:length(dist_data$y))
+  if(i!=1 && dist_data$y[i]>dist_data$y[i+1] && dist_data$y[i]>dist_data$y[i-1])
+    break;
+modeIndex = i
+
+xIndices = c(dist_data$x[meanIndex], dist_data$x[medianIndex], dist_data$x[modeIndex])
+yIndices = c(dist_data$y[meanIndex], dist_data$y[medianIndex], dist_data$y[modeIndex])
+
+names = c("Mean", "Median", "Mode")
+
+plot_ly(data = dist_data) %>%
+  add_lines(x=~x,y=~y, name="Distribution") %>%
+  add_markers(x=xIndices,
+              y=yIndices,
+              name=names,
+              marker = list(size=10)) %>%
+  layout(title="Log-normal distribution",
+         xaxis = list(range = c(0, 5)))
 ```
 
-The above distribution's mean was found out to be $`r round(meanValue,2)`$, median was found out to be $`r round(medianValue,2)`$, and mode was found out to be $`r round(modeValue,2)`$.
+The above distribution's mean was found out to be $`r round(dist_data$x[meanIndex],2)`$, median was found out to be $`r round(dist_data$x[medianIndex],2)`$, and mode was found out to be $`r round(dist_data$x[modeIndex],2)`$.
 
 This follows the rule $\text{mode}<\text{median}<\text{mean}$.
 
@@ -72,11 +85,21 @@ Do all right skewed distributions follow this rule? No. There are exceptions to 
 Here you go:
 
 ```{r symmetric_distribution}
-x=seq(-5,5,0.01)
-y=dnorm(x, mean = 0, sd = 1)
-plot <- ggplot()+aes(x,y)+geom_line() +
-  plot_line(0, "red")+plot_label(0, 0.2, "red", "Mean, Median, Mode\n")
-plot
+dist_data = data.frame(x=seq(-100,100,0.01),y=dnorm(seq(-100,100,0.01), mean = 0, sd = 1))
+
+for(centre in 1:length(dist_data$x)){
+  if(dist_data$x[centre]==0)
+    break;
+}
+plot_ly(data = dist_data) %>%
+  add_lines(x=~x,y=~y, name="Distribution") %>%
+  add_markers(x=0,
+              y=~y[centre],
+              name="Mean, Median and Mode",
+              color = I("purple"),
+              marker = list(size=10)) %>%
+  layout(title="Normal distribution",
+         xaxis = list(range = c(-5, 5)))
 ```
 
 A good ol' normal distribution.
@@ -120,21 +143,46 @@ Let us plot the **wages** data on a histogram and see it's mean, median and mode
 ```{r plot_data}
 wages <- na.omit(income$wages)
 
-plot <- ggplot()+aes(wages)+geom_histogram(bins=50)
-highest_bin <- arrange(ggplot_build(plot)$data[[1]],desc(y))[1,]
-
 meanIncome <- mean(wages)
 medianIncome <- median(wages)
-modeIncome <- highest_bin$x
+modeIncome <- -1
 
-plot <- plot+
-  plot_line(meanIncome, "blue")+plot_label(meanIncome, 400, "blue", "\nMean")+
-  plot_line(medianIncome, "red")+plot_label(medianIncome, 400, "red", "Median\n")+
-  plot_line(modeIncome, "magenta")+plot_label(modeIncome, 400, "magenta", "Mode\n\n")
+meanBinH = -1
+medianBinH = -1
+modeBinH = -1
+number_of_bins = 50
+highestBinIndex = -1
 
-plot
+h <- hist(x = wages, breaks = seq(min(wages), max(wages), l=number_of_bins+1), plot = FALSE)
+
+for(i in 1:length(h$counts)){
+  
+  if(meanBinH==-1 && h$breaks[i]>meanIncome)
+    meanBinH = h$counts[i-1]
+  
+  if(medianBinH==-1 && h$breaks[i]>medianIncome)
+    medianBinH = h$counts[i-1]
+  
+  if(h$counts[i]>modeBinH) {
+    modeIncome = h$mids[i]
+    modeBinH = h$counts[i]
+    highestBinIndex = i
+  }
+  
+}
+xCentres = c(meanIncome, medianIncome, modeIncome)
+yCentres = c(meanBinH, medianBinH, modeBinH)
+names = c("Mean", "Median", "Mode")
+colors = c(I("orange"), I("red"), I("purple"))
+
+plot_ly() %>%
+  add_bars(x = h$mids, y = h$counts, name = "Wages Bar") %>%
+  add_markers(x=xCentres, y=yCentres, name = names, color = colors, marker = list(size=10)) %>%
+  layout(title = "SLID Wages Data",
+         xaxis = list(title="Wage (per hour, in CAD)"),
+         yaxis = list(title="Number of labourerrs"))
 ```
-If we analyse the graph, we can find that the tallest bin has the (approx.) range $(`r round(highest_bin$xmin, 2)`,`r round(highest_bin$xmax, 2)`)$. Thus, we can say that the *mode* is $`r round(modeIncome, 2)`$. The *median* of the graph turns out to be $`r round(medianIncome, 2)`$, and the *mean* turns out to be $`r round(meanIncome, 2)`$.
+If we analyse the graph, we can find that the tallest bin has the (approx.) range $(`r round(h$breaks[highestBinIndex], 2)`,`r round(h$breaks[highestBinIndex+1], 2)`)$. Thus, we can say that the *mode* is $`r round(modeIncome, 2)`$. The *median* of the graph turns out to be $`r round(medianIncome, 2)`$, and the *mean* turns out to be $`r round(meanIncome, 2)`$.
 
 We can see that this is a *right skewed distribution*, since the long tail is at the right, or towards the positive side of the x-axis. And the relationship between the measures of central tendency in this dataset is $\text{mode}<\text{median}<\text{mean}$, just like in a *typical* right skewed distribution.
 

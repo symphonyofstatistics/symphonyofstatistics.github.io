@@ -4,6 +4,7 @@ description: |
   Exploring the beautiful world of statistics 
 output_dir: "."
 base_url: https://symphonyofstatistics.ml/
+google_analytics: "UA-105365702-2"
 navbar:
   right:
     - text: "Home"

@@ -1,9 +1,28 @@
 ---
-title: "About this blog"
+title: "Welcome to the Symphony of Statistics"
 description: |
-  Some additional details about the blog
+  Welcome to our new blog, the Symphony of Statistics. We hope you enjoy 
+  reading what we have to say!
+creative_commons: CC BY-NC
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
+
+## About me
+Let me begin by introducing myself. Please feel free to skip this section if you want. I am [Siddharth Venu](https://www.linkedin.com/in/sidvenu), and I am currently pursuing a Bachelor of Technology degree from **National Institute of Technology, Trichy**, majoring in Electrical and Electronics Engineering. I've always been a person with lots of interest in mathematics and statistics. I can't assert that I am really good at it (because I'm not), though I can assure you exploring the mathematical world brings me joy.
+
+![Figure from https://www.nitt.edu](https://www.nitt.edu/home/testing_landing/slide-3.jpg){width=100% .external}
+
+
+I have absolutely no prior experience in statistics other than from high school, a year of college and Udacity Courses on Descriptive and Inferential Statitics. I am taking the Coursera specialization Statistics with R by **Duke University** currently, in hopes of transforming that experience into establishing a Data Science career.
+
+I have tried my hand at maintaining a blog previously, with one named [Mathematics Compilations](https://mathcompilations.blogspot.com/). I collaborated with few of my friends at school who had a lot of interest in math to maintain it. But, of course, we stopped posting and the blog fell into disuse (not that it was actually succesful, though). I am writing this on 18 of December, 2019 years after Jesus Christ was (supposedly) born, with a bit of skepticism - would this blog actually progress? I don't know. Let us see!
+
+## About the blog
+I'd love to say that this blog is going to be something that deals with bleeding-edge research that happens in the field of Statistics/Mathematics, but then I'd be lying. The Symphony of Statistics is a blog run by myself an amateur in the vast field that is Statistics. As of now, it wouldn't be featuring Statistics that is too difficult for a high schooler to grasp.
+
+I will be posting regularly (every 3 days or so) about the interesting things that Statistics have to offer, and my experiences in taking the specialization by Duke University. The intended audience of this blog are statisticians, learners, and heck, anyone with the remotest interest in Statistics! This blog doesn't intend to be a comprehensive guide to statistics, but rather strives to be a source of informally presented explanations in various areas of Statistics.
+
+You can subscribe to this blog by going home and entering your email address in the form on the right side of the page.
