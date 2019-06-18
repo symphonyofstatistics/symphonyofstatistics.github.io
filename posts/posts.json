@@ -1,1 +1,19 @@
-[]
+[
+  {
+    "path": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/",
+    "title": "Mean, Median and Mode in cases of skewed distributions",
+    "description": "A comprehensive explanation of the relationships between the measures of central tendency in skewed distributions",
+    "author": [
+      {
+        "name": "Siddharth Venu",
+        "url": "https://www.linkedin.com/in/sidvenu/"
+      }
+    ],
+    "date": "2019-06-18",
+    "categories": [],
+    "preview": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/images/preview.png",
+    "last_modified": "2019-06-18T14:24:16+05:30",
+    "preview_width": 700,
+    "preview_height": 450
+  }
+]

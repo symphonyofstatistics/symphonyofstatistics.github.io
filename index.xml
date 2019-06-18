@@ -8,5 +8,14 @@
 </description>
     <generator>Distill</generator>
     <lastBuildDate>Tue, 18 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Mean, Median and Mode in cases of skewed distributions</title>
+      <dc:creator>Siddharth Venu</dc:creator>
+      <link>https://symphonyofstatistics.ml/posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions</link>
+      <description>A comprehensive explanation of the relationships between the measures of central tendency in skewed distributions</description>
+      <guid>https://symphonyofstatistics.ml/posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions</guid>
+      <pubDate>Tue, 18 Jun 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://symphonyofstatistics.ml/posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/images/preview.png" medium="image" type="image/png" width="700" height="450"/>
+    </item>
   </channel>
 </rss>

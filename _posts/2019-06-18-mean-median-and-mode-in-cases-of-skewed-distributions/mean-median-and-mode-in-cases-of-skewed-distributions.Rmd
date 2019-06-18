@@ -11,7 +11,8 @@ output:
     self_contained: false
 creative_commons: CC BY-NC
 repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
-draft: true
+preview: images/preview.png
+draft: false
 ---
 
 ```{r setup, include=FALSE}
@@ -36,9 +37,9 @@ I remember when I first got introduced to skewed distributions, and I couldn't g
 
 An example of a *right skewed distribution* (where the long tail is on the right) is the *lognormal* distribution. If a random variable $Y$ is a normal distribution, then $X=e^Y$ will be a lognormal distribution. Similarly, if $Y$ is a lognormal distribution, then $X=\ln{Y}$ will be a normal distribution.
 
-Let us look at a lognormal distribution with $\mu=0$ and $\sigma=1$, where $\mu$ and $\sigma$ doesn't represent the actual mean and standard deviation of this distribution, but rather the mean and standard deviation of it's corresponding normal distribution.
+Let us look at a lognormal distribution with $\mu=0$ and $\sigma=1$, where $\mu$ and $\sigma$ doesn't represent the actual mean and standard deviation of this distribution respectively, but rather the mean and standard deviation of its corresponding normal distribution.
 
-``` {r lognormal_distribution, preview=TRUE}
+``` {r lognormal_distribution}
 dist_data = data.frame(x=seq(0,100,0.01),y=dlnorm(seq(0,100,0.01), meanlog=0, sdlog=1))
 
 meanValue = sum(dist_data$x*dist_data$y)/sum(dist_data$y)
@@ -104,11 +105,11 @@ plot_ly(data = dist_data) %>%
 
 A good ol' normal distribution.
 
-Let us say you're adding a number of values to the right side of this distribution, distributing it in such a way that it creates a *tail* in the right side. Observe how the measures of central tendency shifts:
+Let us say you're adding a number of values to the right side of this distribution, distributing it in such a way that it creates a *tail* in the right side. Observe how the measures of central tendency shift:
 
 * The mode will stay at the exact same place, since the global maxima won't change by adding a few values to the right tail of the distribution.
 * The median, however, will shift by the *number* of values you're adding to the right.
-* The mean will shift more than the median (imagine adding a number comparably very large than the total number of values we have in the set).
+* The mean will shift more than the median (imagine adding a number comparatively large than the total number of values we have in the set).
 
 To summarise, adding this *tail* of sorts to the right will cause the mean to be greater than the median, which in turn will be greater than the mode. In conclusion, the rule $\text{mode}<\text{median}<\text{mean}$ is followed for distributions with a right tail, i.e., right skewed distributions.
 
@@ -185,6 +186,3 @@ plot_ly() %>%
 If we analyse the graph, we can find that the tallest bin has the (approx.) range $(`r round(h$breaks[highestBinIndex], 2)`,`r round(h$breaks[highestBinIndex+1], 2)`)$. Thus, we can say that the *mode* is $`r round(modeIncome, 2)`$. The *median* of the graph turns out to be $`r round(medianIncome, 2)`$, and the *mean* turns out to be $`r round(meanIncome, 2)`$.
 
 We can see that this is a *right skewed distribution*, since the long tail is at the right, or towards the positive side of the x-axis. And the relationship between the measures of central tendency in this dataset is $\text{mode}<\text{median}<\text{mean}$, just like in a *typical* right skewed distribution.
-
-## Source Code {.appendix}
-This blog uses Distill for R Markdown to process the source code in R, and to render the output to a HTML document. You can find the source R Markdown file [here](https://github.com/sidvenu/sidvenu.github.io/tree/master/_posts).
