@@ -5,7 +5,11 @@ description: |
 output_dir: "."
 base_url: https://symphonyofstatistics.ml/
 google_analytics: "UA-105365702-2"
+favicon: artwork/logoArtboard 4.png
 navbar:
+  logo:
+    image: artwork/logoArtboard 1.png
+    href: index.html
   right:
     - text: "Home"
       href: index.html
@@ -14,7 +18,8 @@ navbar:
     - icon: fa fa-rss
       href: index.xml
 output: 
-  distill::distill_article
+  distill::distill_article:
+    css: styles.css
 collections:
   posts:
     disqus: symphonyofstatistics

@@ -24,6 +24,7 @@
   <meta property="description" itemprop="description" content="Welcome to our new blog, the Symphony of Statistics. We hope you enjoy &#10;reading what we have to say!"/>
   
   <link rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/"/>
+  <link rel="icon" type="image/png" href="artwork/logoArtboard 4.png"/>
   
   
   <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
@@ -1270,8 +1271,27 @@
   gtag('js', new Date());
   gtag('config', 'UA-105365702-2');
   </script>
+  <style type="text/css">
+  .distill-site-header a.logo {
+  	margin: 12.5px 0px;
+  	display: inline-block;
+  }
+  .distill-site-header a.logo img {
+  	display: inline-block;
+  	max-height: 25px;
+  }
+  
+  .distill-site-header .nav-left a.title {
+  	display: none;
+  }
+  
+  .distill-site-header .nav-left {
+  	margin-left: 20px;
+  }
+  </style>
   <!--/radix_placeholder_site_in_header-->
 
+  <link rel="stylesheet" href="styles.css" type="text/css"/>
 
 </head>
 
@@ -1288,6 +1308,9 @@
 <header class="header header--fixed" role="banner">
 <nav class="distill-site-nav distill-site-header">
 <div class="nav-left">
+<a class="logo" href="index.html">
+<img src="artwork/logoArtboard%201.png"/>
+</a>
 <a href="index.html" class="title">The Symphony of Statistics</a>
 </div>
 <div class="nav-right">

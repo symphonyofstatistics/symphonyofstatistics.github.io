@@ -1,0 +1,16 @@
+.distill-site-header a.logo {
+	margin: 12.5px 0px;
+	display: inline-block;
+}
+.distill-site-header a.logo img {
+	display: inline-block;
+	max-height: 25px;
+}
+
+.distill-site-header .nav-left a.title {
+	display: none;
+}
+
+.distill-site-header .nav-left {
+	margin-left: 20px;
+}
