@@ -1,0 +1,28 @@
+---
+title: "Privacy Policy"
+---
+# Google Analytics
+The Symphony of Statistics uses Google Analytics as a tool to analyse the blog's traffic. Google Analytics uses cookies to measure user-interactions on websites. If you want to opt-out of the usage of cookies to track user-interactions, you may do so by clicking [here](javascript:gaOptout()).
+
+# Google AdSense
+The Symphony of Statistics uses Google AdSense to display non-intrusive ads on the articles and the pages in the blog. Google uses cookies to help serve the ads based on a your prior visits to this blog or other websites. Thus, when you visit this blog, Google may use cookies to personalize the ads that it displays. To disable such personalized advertising, you can go to [Google Ads Settings](https://www.google.com/settings/ads) to do so.
+
+<script>
+// Set to the same value as the web property used on the site
+var gaProperty = 'UA-105365702-2';
+
+// Disable tracking if the opt-out cookie exists.
+var disableStr = 'ga-disable-' + gaProperty;
+
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+  window[disableStr] = true;
+}
+
+// Opt-out function
+function gaOptout() {
+  if (confirm("To disable cookies for Google Analytics, please press OK")) {
+    document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+    window[disableStr] = true;
+  }
+}
+</script>
