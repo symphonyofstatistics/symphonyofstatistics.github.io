@@ -1,0 +1,109 @@
+---
+title: "Massive Data collection undertakings in human history"
+description: |
+  A presidential election and a medical experiment
+author:
+  - name: Siddharth Venu
+    url: https://www.linkedin.com/in/sidvenu/
+date: 06-22-2019
+creative_commons: CC BY-NC
+repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
+preview: https://upload.wikimedia.org/wikipedia/commons/b/bd/Dr_Jonas_Edward_Salk_%28cropped%29.jpg
+output:
+  distill::distill_article:
+    self_contained: false
+categories:
+  - case studies
+  - sampling
+  - biases
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+While a well-funded research often employs renowned statisticians to make it as accurate as possible, the outcome may not always be reliable, sometimes even riddled with the simplest of errors! Let us look at two cases in human history where there was a massive data collection undertaking to predict the outcome of an event/treatment.
+
+<aside>
+**Sample**<br>A set from within the population of the study.<br>**Eg**: Population - *People of the world*<br>Sample - *50,000 people selected from the set of the people of the world*
+</aside>
+
+## The Literary Digest Poll of 1936 
+
+<figure>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/FDR_in_1933_2.jpg" alt="Franklin D. Roosevelt - Figure from National Archives and Records Administration" class="external" style="width:47.6%;display: inline;">
+<img src="https://upload.wikimedia.org/wikipedia/commons/d/db/LandonPortr.jpg" alt="Alfred Landon - Figure from National Archives and Records Administration" class="external" style="width:49.0%">
+<figcaption>Franklin D. Roosevelt and Alfred Landon - Figure from National Archives and Records Administration</figcaption>
+</figure>
+
+The 1936 Literary Digest Poll was conducted to predict the winner of the presidential elections of 1936, between Alfred Landon, a Republican governer and Franklin D. Roosevelt, the incumbent President. It is one of the most cited examples in statistics, as it was one of the most expensive and largest polls conducted at that time (with over 2.4 million people in its sample), primarily because of the winner it predicted.
+
+The Literary Digest predicted that the Republican candidate will win the elections by getting 57% of the vote, and the Democratic candidate winning only 43% of the vote. However, the actual election result was simply the contrary. Landon got just 36.5% of the vote, with 60.5% going to FDR, comfortably winning the elections.
+
+<aside>
+**Fun Fact:** FDR won 98.49% of the electoral vote total, which remains the highest percentage of the electoral vote won by any candidate since 1820.
+</aside>
+
+What went wrong? Two things:
+
+1. They took a *convenience sample*. The selection process involved The Literary Digest selecting from telephone directories, club membership lists, lists of magazine subscibers and so on. This targets only the middle and the upper classes, leaving out the lower class - a significant chunk of the population left out. Since they drew a sample from the population that is close to hand i.e., convenient, a *selection bias* arose.
+
+<aside>
+In 1936, owning a telephone was considered a luxury!
+</aside>
+
+2. Not just that! Out of 10 million people, only about 2.4 million people participated in the survey. The people who filled the survey may not be representative of the people who did not. Thus, this *non-response bias* proved to be one of the factors of the magnification of the error in the poll results.
+
+<aside>
+In 1938, *The Literary Digest* published its final issue.
+</aside>
+
+## Salk Vaccine Field Trials - the largest medical experiment in history
+
+Everybody has heard about Polio - an infectious disease caused by the poliovirus. At its peak in the 1940s and 1950s, polio would paralyze or kill over half a million people worldwide every year. ^[["What is Polio"](https://web.archive.org/web/20070929090612/http://www.immunize.cpha.ca/english/consumer/consrese/pdf/Polio.pdf) (PDF). Canadian International Immunization Initiative. p. 3. Archived from [the original](http://www.immunize.cpha.ca/english/consumer/consrese/pdf/Polio.pdf) (PDF) on September 29, 2007. Retrieved 2007-05-09.] In 2018, there were 33 cases of wild polio and 104 cases of vaccine-derived polio.^[[World Health Organization](https://extranet.who.int/polis/public/CaseCount.aspx)]
+
+But how did they test the vaccine? You certainly can't run a couple of trials and expect FDA approval, can you?
+
+*Statistics enters the game*
+
+A huge sample of 750,000 children in their 1<sup>st</sup>, 2<sup>nd</sup> and 3<sup>rd</sup> grade were randomly selected to participate in the study. They were divided into three groups - 
+
+1. **treatment or "active drug" group**, where the children received one or more injections of the vaccine 
+2. **control or "placebo drug" group**, where the children received a placebo instead of the vaccine 
+3. **natural history group**, where the children neither received a vaccine nor a placebo
+
+
+
+<aside>
+**Placebo**<br>An inert substance administered to the control group to make sure that the *only* difference between the control and the treatment groups is the presence of the treatment in treatment group.
+</aside>
+
+by random sampling. The results of the field trial were announced on April 12, 1955, as follows:
+
+```{r display_dataset, layout="l-body-outset"}
+data <- read.csv("PolioTrials.csv", header = TRUE)
+library(rmarkdown)
+library(tibble)
+library(dplyr)
+display_data <- data[which(data$Experiment=="RandomizedControl"),c(-1,-2)] 
+display_data <- display_data %>% 
+  add_row(Group="Total", 
+          Population=sum(display_data$Population), 
+          Paralytic=sum(display_data$Paralytic), 
+          NonParalytic=sum(display_data$NonParalytic), 
+          FalseReports=sum(display_data$FalseReports))
+paged_table(display_data)
+```
+
+Here, **Vaccinated** refers to the Treatment Group, **Placebo** refers to the Control Group, and **NotInoculated** refers to the Natural History Group. There is another group in this dataset, called **IncompleteVaccinations**, which refers to the children in the Treatment Group who failed to complete their vaccinations.
+
+The children in the treatment group having lower cases of polio, and the fact that the children were distributed into groups by random, showed the world that the Salk Vaccine was indeed effective. Thus came the end to a disease which killed millions in human history, dramatically changing the fate of the future generations.
+
+### Tribute
+
+![Jonas Edward Salk - Figure from SAS Scandinavian Airlines - Public domain](https://upload.wikimedia.org/wikipedia/commons/5/59/Jonas_Salk_candid.jpg){width=50% .external}
+
+[Jonas Salk](https://en.wikipedia.org/wiki/Jonas_Salk), the man behind the Salk Vaccine for the eradication of polio was asked who owned the patent to this vaccine, to which Salk gave his infamous reply: **Could you patent the Sun?**. 
+
+<iframe style="border:0px;width:560px;height:315px" src="https://www.youtube.com/embed/erHXKP386Nk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Shall his selfless work towards the development of the world drive us all to strive for excellence, and at the same time humanity.

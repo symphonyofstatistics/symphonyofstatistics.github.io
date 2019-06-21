@@ -26,3 +26,4 @@ collections:
     share: [linkedin, twitter, facebook]
     subscribe: _subscribe.html
     citations: false
+    feed_items_max: 50

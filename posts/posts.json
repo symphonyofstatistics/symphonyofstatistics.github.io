@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2019-06-22-massive-data-collection-undertakings/",
+    "title": "Massive Data collection undertakings in human history",
+    "description": "A presidential election and a medical experiment",
+    "author": [
+      {
+        "name": "Siddharth Venu",
+        "url": "https://www.linkedin.com/in/sidvenu/"
+      }
+    ],
+    "date": "2019-06-22",
+    "categories": [
+      "case studies",
+      "sampling",
+      "biases"
+    ],
+    "preview": "https://upload.wikimedia.org/wikipedia/commons/b/bd/Dr_Jonas_Edward_Salk_%28cropped%29.jpg",
+    "last_modified": "2019-06-22T01:38:04+05:30"
+  },
+  {
     "path": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/",
     "title": "Mean, Median and Mode in cases of skewed distributions",
     "description": "A comprehensive explanation of the relationships between the measures of central tendency in skewed distributions",
@@ -10,9 +29,12 @@
       }
     ],
     "date": "2019-06-18",
-    "categories": [],
+    "categories": [
+      "measures of central tendency",
+      "skewed distributions"
+    ],
     "preview": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/images/preview.png",
-    "last_modified": "2019-06-21T03:01:36+05:30",
+    "last_modified": "2019-06-21T15:33:14+05:30",
     "preview_width": 700,
     "preview_height": 450
   }

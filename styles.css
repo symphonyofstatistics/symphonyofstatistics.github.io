@@ -1,5 +1,5 @@
 .distill-site-header a.logo {
-	margin: 12.5px 0px;
+	margin: 12.5px 0;
 	display: inline-block;
 }
 .distill-site-header a.logo img {
@@ -13,4 +13,10 @@
 
 .distill-site-header .nav-left {
 	margin-left: 20px;
+}
+
+.posts-list .post-preview .thumbnail img {
+  max-height: 200px;
+  width: auto;
+  margin: 0 auto;
 }

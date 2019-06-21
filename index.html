@@ -1270,7 +1270,7 @@
   </script>
   <style type="text/css">
   .distill-site-header a.logo {
-  	margin: 12.5px 0px;
+  	margin: 12.5px 0;
   	display: inline-block;
   }
   .distill-site-header a.logo img {
@@ -1285,6 +1285,13 @@
   .distill-site-header .nav-left {
   	margin-left: 20px;
   }
+  
+  .posts-list .post-preview .thumbnail img {
+    max-height: 200px;
+    width: auto;
+    margin: 0 auto;
+  }
+  
   </style>
   <!--/radix_placeholder_site_in_header-->
 
@@ -1643,8 +1650,21 @@ function init_posts_list() {
 <div class="posts-container posts-with-sidebar posts-apply-limit l-screen-inset">
 <div class="posts-list">
 <h1 class="posts-list-caption">The Symphony of Statistics</h1>
+<a href="posts/2019-06-22-massive-data-collection-undertakings/" class="post-preview">
+<script class="post-metadata" type="text/json">{"categories":["case studies","sampling","biases"]}</script>
+<div class="metadata">
+<div class="publishedDate">June 22, 2019</div>
+</div>
+<div class="thumbnail">
+<img data-src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Dr_Jonas_Edward_Salk_%28cropped%29.jpg"/>
+</div>
+<div class="description">
+<h2>Massive Data collection undertakings in human history</h2>
+<p>A presidential election and a medical experiment</p>
+</div>
+</a>
 <a href="posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/" class="post-preview">
-<script class="post-metadata" type="text/json">{"categories":[]}</script>
+<script class="post-metadata" type="text/json">{"categories":["measures of central tendency","skewed distributions"]}</script>
 <div class="metadata">
 <div class="publishedDate">June 18, 2019</div>
 </div>
@@ -1668,6 +1688,31 @@ function init_posts_list() {
   <input type='hidden' name='schedule_type' value='0' />
   <input type='submit' value='Subscribe' />
 </form>
+</div>
+<div class="sidebar-section categories">
+<h3>Categories</h3>
+<ul>
+<li>
+<a href="#biases">biases</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#case_studies">case studies</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#measures_of_central_tendency">measures of central tendency</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#sampling">sampling</a>
+<span class="category-count">(1)</span>
+</li>
+<li>
+<a href="#skewed_distributions">skewed distributions</a>
+<span class="category-count">(1)</span>
+</li>
+</ul>
 </div>
 </div>
 <div class="posts-more">
