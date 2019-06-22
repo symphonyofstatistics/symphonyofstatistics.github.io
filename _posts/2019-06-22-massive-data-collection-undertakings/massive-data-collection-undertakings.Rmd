@@ -8,7 +8,8 @@ author:
 date: 06-22-2019
 creative_commons: CC BY-NC
 repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
-preview: https://upload.wikimedia.org/wikipedia/commons/b/bd/Dr_Jonas_Edward_Salk_%28cropped%29.jpg
+base_url: https://symphonyofstatistics.ml/
+preview: images/preview.jpg
 output:
   distill::distill_article:
     self_contained: false

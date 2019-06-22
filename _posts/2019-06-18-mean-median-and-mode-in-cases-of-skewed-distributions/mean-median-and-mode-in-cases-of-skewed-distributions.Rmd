@@ -11,7 +11,8 @@ output:
     self_contained: false
 creative_commons: CC BY-NC
 repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
-preview: https://symphonyofstatistics.ml/posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/images/preview.png
+base_url: https://symphonyofstatistics.ml/
+preview: images/preview.png
 categories:
   - measures of central tendency
   - skewed distributions
