@@ -1,5 +1,5 @@
 ---
-title: "Massive Data collection undertakings in human history"
+title: "Massive Data Collection undertakings in human history"
 description: |
   A presidential election and a medical experiment
 author:

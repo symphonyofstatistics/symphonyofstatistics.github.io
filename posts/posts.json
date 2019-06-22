@@ -1,7 +1,7 @@
 [
   {
     "path": "posts/2019-06-22-massive-data-collection-undertakings/",
-    "title": "Massive Data collection undertakings in human history",
+    "title": "Massive Data Collection undertakings in human history",
     "description": "A presidential election and a medical experiment",
     "author": [
       {
@@ -16,7 +16,7 @@
       "biases"
     ],
     "preview": "posts/2019-06-22-massive-data-collection-undertakings/images/preview.jpg",
-    "last_modified": "2019-06-22T10:04:46+05:30"
+    "last_modified": "2019-06-22T10:32:27+05:30"
   },
   {
     "path": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/",
