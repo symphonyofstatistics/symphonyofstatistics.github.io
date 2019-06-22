@@ -5,10 +5,10 @@ description: |
 output_dir: "."
 base_url: https://symphonyofstatistics.ml/
 google_analytics: "UA-105365702-2"
-favicon: artwork/logoArtboard 4.png
+favicon: artwork/favicon.png
 navbar:
   logo:
-    image: artwork/logoArtboard 1.png
+    image: artwork/header.png
     href: index.html
   right:
     - text: "Home"
