@@ -6,19 +6,11 @@ description: |
 creative_commons: CC BY-NC
 ---
 
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE)
 ```
-
-## About me
-Let me begin by introducing myself. Please feel free to skip this section if you want. I am [Siddharth Venu](https://www.linkedin.com/in/sidvenu), and I am currently pursuing a Bachelor of Technology degree from **National Institute of Technology, Trichy**, majoring in Electrical and Electronics Engineering. I've always been a person with lots of interest in mathematics and statistics. I can't assert that I am really good at it (because I'm not), though I can assure you exploring the mathematical world brings me joy and this blog is to share it with everyone.
-
-![Figure from https://www.nitt.edu](https://www.nitt.edu/home/testing_landing/slide-3.jpg){width=100% .external}
-
-
-I have absolutely no prior experience in statistics other than from high school, a year of college and Udacity Courses on Descriptive and Inferential Statistics. I am taking the Coursera specialization **Statistics with R** by **Duke University** currently, in hopes of transforming that experience into establishing a Data Science career.
-
-I have tried my hand at maintaining a blog previously, with one named [Mathematics Compilations](https://mathcompilations.blogspot.com/). I collaborated with few of my friends at school who had a lot of interest in math to maintain it. But, of course, we stopped posting and the blog fell into disuse (not that it was actually succesful, though). I am writing this on 18 of December, 2019 years after Jesus Christ was (supposedly) born, with a bit of skepticism - would this blog actually progress? I don't know. Let us see!
 
 ## About the blog
 I'd love to say that this blog is going to be something that deals with cutting-edge research that happens in the field of Statistics/Mathematics, but then I'd be lying. The Symphony of Statistics is a blog run by myself, an amateur in the vast field that is Statistics. As of now, it wouldn't be featuring Statistics that is too difficult for a high schooler to grasp.
@@ -27,6 +19,33 @@ I will be posting regularly (every 3 days or so) about the interesting things th
 
 You can subscribe to this blog by going home and entering your email address in the **form** on the right side of the page.
 
+## The Team
+### Siddharth Venu - Content Creator and Executive Head
+
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="sidvenu"><a class="LI-simple-link" href='https://in.linkedin.com/in/sidvenu?trk=profile-badge'>Siddharth Venu</a></div>
+**GitHub**: [sidvenu](https://github.com/sidvenu)
+
+Let me begin by introducing myself. I am [Siddharth Venu](https://www.linkedin.com/in/sidvenu), and I am currently pursuing a Bachelor of Technology degree from **National Institute of Technology, Trichy**, majoring in Electrical and Electronics Engineering. I've always been a person with lots of interest in mathematics and statistics. I can't assert that I am really good at it (because I'm not), though I can assure you exploring the mathematical world brings me joy and this blog is to share it with everyone.
+
+![Figure from [nitt.edu](https://www.nitt.edu)](https://www.nitt.edu/home/testing_landing/slide-3.jpg){width=100% .external}
+
+
+I have absolutely no prior experience in statistics other than from high school, a year of college and Udacity Courses on Descriptive and Inferential Statistics. I have talked with many Data Science experts, including experts from Google and interns from Microsoft, and have an exact idea how to carve out my career as a Data Scientist, and to help others become Data Scientists as well. I am taking the Coursera specialization **Statistics with R** by **Duke University** currently, in hopes of transforming that experience into establishing a Data Science career.
+
+I have been an Android App Developer with over 5 years of experience, with contributions to the open source community in my priority list for the last few years. I was a participant in Google Code-in 2017, and an aspirant for GSoC 2020.
+
+I have tried my hand at maintaining a blog previously, with one named [Mathematics Compilations](https://mathcompilations.blogspot.com/). I collaborated with few of my friends at school who had a lot of interest in math to maintain it. But, of course, we stopped posting and the blog fell into disuse (not that it was actually succesful, though). I am writing this on 18 of December, 2019 years after Jesus Christ was (supposedly) born, with a bit of skepticism - would this blog actually progress? I am positive about that :)
+
+### Prithvi Venu - Head of Digital Marketing
+
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="horizontal" data-theme="light" data-vanity="prithviv"><a class="LI-simple-link" href='https://in.linkedin.com/in/prithviv?trk=profile-badge'>Prithvi Venu</a></div>
+**GitHub**: [PrithviVenu](https://github.com/PrithviVenu)
+
+Hey everyone! I am a Computer Science Engineer from **RMK Engineering College** in Chennai, Tamil Nadu. I'm a student who found his true passion in programming. Curious as to why these programs worked the way they do, I started teaching myself how to code. I love the combination of creative and logical problem-solving skills which I get to use when writing code And I love the fact that there is always more to learn!
+
+I was initially an enthusiastic Android App Developer, and soon after started learning MacOS Development as a part of my internship at Zoho Corp. I have also taken a couple of Machine Learning courses on Coursera and MOOC websites. 
+
+I don't really have much to say now, except for you to feel free to ask me anything with regards to MacOS Dev, MOOCs and ML!
 
 <script>
 // Set to the same value as the web property used on the site
