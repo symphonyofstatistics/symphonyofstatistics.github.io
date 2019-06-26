@@ -1,0 +1,57 @@
+---
+title: "Generalization and Causation"
+description: |
+  An insight on the infamous statement 'Correlation does not imply causation'
+author:
+  - name: Siddharth Venu
+    url: https://www.linkedin.com/in/sidvenu/
+date: 06-26-2019
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+You must have heard of the quote 'Correlation does not imply causation', and may have even used it (without knowing what it is, of course 🙃).
+
+Let's start off with a question.
+
+When ice cream sales in the world increases, drownings in swimming pools also seem to increase. Does this mean ice cream monsters drown your friends while they are chilling out in the pool? (Hint: No). This is a fine example where a *confounding variable* is at play.
+
+### Confounding variable
+
+A confounding variable is a variable that influences both the dependent and independent variable. In the above example, *season* is the confounding variable. In summer, you are more likely to get a cold ice cream after a day out in the Sun. In the same season, you are also more likely to go swimming, which of course leads to proportionately more deaths.
+
+<aside>
+**Independent variable:**<br>The variable that the experimenter changes.<br><br>**Dependent variable:**<br>The variable that is supposed to change as the independent variable changes.
+</aside>
+
+Thus, we can't really say that something has caused another based on just their correlation.We also cannot generalize the findings of a sample to the population.
+
+However, we do have methods to find if something has caused another, and if a finding can be generalized to the sample.
+
+## Method to determine causation and if generalization is valid
+
+### Generalization
+
+When we are taking a sample from the population, if we use random selection (each person in the population having the same change of getting selected), then the sample is more likely to be representative of the population. While food is getting cooked, to see if it has adequate salt, we mix it, take a pinch to taste it - since we 'mix' it and **then** take it for tasting, the tasted food is likely to have the properties of the soup in it, and is representative of all the food in the container. In this way, you know whether the food does have adequate salt or not. Thus, in this case, **generalization** is something that makes sense.
+
+### Causation
+
+Let us say you have a few experiment groups in your statistics research, and each participant is equally likely to get assigned each group. Every aspect of the experiment should be similar to the groups, such that the only factor differing in each group is the independent variable that we are testing for. Therefore, since we are randomly assigning participants, other factors that may influence the dependent variable is removed. Thus, we can look at the results and see if there is any stark difference between the groups, and if so, we can say that the change in the independent variable in each group *caused* the resulting difference between the groups. For example, the Salk Vaccine Trials proved the causal nature of Salk Vaccine with respect to decreasing contractions of Polio (read about it [here](https://symphonyofstatistics.ml/posts/2019-06-22-massive-data-collection-undertakings/)).
+
+### Summary
+
+::: l-body-outset
+| |Random assignment|No random assignment| |
+|------------------|---------------------|--------------|-------------|
+|**Random sampling**|causal and generalizable|not causal, but generalizable|**generalizability**|
+|**No random sampling**|causal, but not generalizable|neither causal nor generalizable|**No generalizability**|
+| |**Causation**|**Association**| |
+:::
+
+**TLDR** Random sampling makes the results generalizable to the population.
+Random assignment (from the sample to different groups) makes the results causal i.e., the *independent variable* that differs between the groups being the *cause* of any differences in the *dependent variable* of each group.

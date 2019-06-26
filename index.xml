@@ -12,7 +12,15 @@
       <link>https://symphonyofstatistics.ml/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Sat, 22 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Generalization and Causation</title>
+      <dc:creator>Siddharth Venu</dc:creator>
+      <link>https://symphonyofstatistics.ml/posts/2019-06-26-generalization-and-causation</link>
+      <description>An insight on the infamous statement 'Correlation does not imply causation'</description>
+      <guid>https://symphonyofstatistics.ml/posts/2019-06-26-generalization-and-causation</guid>
+      <pubDate>Tue, 25 Jun 2019 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Massive Data Collection undertakings in human history</title>
       <dc:creator>Siddharth Venu</dc:creator>

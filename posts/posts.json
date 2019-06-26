@@ -1,5 +1,20 @@
 [
   {
+    "path": "posts/2019-06-26-generalization-and-causation/",
+    "title": "Generalization and Causation",
+    "description": "An insight on the infamous statement 'Correlation does not imply causation'",
+    "author": [
+      {
+        "name": "Siddharth Venu",
+        "url": "https://www.linkedin.com/in/sidvenu/"
+      }
+    ],
+    "date": "2019-06-26",
+    "categories": [],
+    "preview": {},
+    "last_modified": "2019-06-26T09:53:17+05:30"
+  },
+  {
     "path": "posts/2019-06-22-massive-data-collection-undertakings/",
     "title": "Massive Data Collection undertakings in human history",
     "description": "A presidential election and a medical experiment",
