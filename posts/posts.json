@@ -10,9 +10,17 @@
       }
     ],
     "date": "2019-06-26",
-    "categories": [],
-    "preview": {},
-    "last_modified": "2019-06-26T09:53:17+05:30"
+    "categories": [
+      "generalization",
+      "causation",
+      "correlation",
+      "association",
+      "sampling",
+      "random sampling",
+      "random assignment"
+    ],
+    "preview": "posts/2019-06-26-generalization-and-causation/images/preview.jpg",
+    "last_modified": "2019-06-26T10:03:08+05:30"
   },
   {
     "path": "posts/2019-06-22-massive-data-collection-undertakings/",
@@ -31,7 +39,7 @@
       "biases"
     ],
     "preview": "posts/2019-06-22-massive-data-collection-undertakings/images/preview.jpg",
-    "last_modified": "2019-06-22T23:49:07+05:30"
+    "last_modified": "2019-06-26T09:58:33+05:30"
   },
   {
     "path": "posts/2019-06-18-mean-median-and-mode-in-cases-of-skewed-distributions/",
