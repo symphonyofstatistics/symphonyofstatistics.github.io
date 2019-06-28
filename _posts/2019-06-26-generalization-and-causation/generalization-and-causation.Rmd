@@ -49,7 +49,7 @@ However, we do have methods to find if something has caused another, and if a fi
 
 ### Generalization
 
-When we are taking a sample from the population, if we use random selection (each person in the population having the same change of getting selected), then the sample is more likely to be representative of the population. While food is getting cooked, to see if it has adequate salt, we mix it, take a pinch to taste it - since we 'mix' it and **then** take it for tasting, the tasted food is likely to have the properties of the food in it, and is representative of all the food in the container. In this way, you know whether the food does have adequate salt or not. Thus, in this case, **generalization** is something that makes sense.
+When we are taking a sample from the population, if we use random selection (each person in the population having the same chance of getting selected), then the sample is more likely to be representative of the population. While food is getting cooked, to see if it has adequate salt, we mix it, take a pinch to taste it - since we 'mix' it and **then** take it for tasting, the tasted food is likely to have the properties of the food in it, and is representative of all the food in the container. In this way, you know whether the food does have adequate salt or not. Thus, in this case, **generalization** is something that makes sense.
 
 ![Brown Soup in White Ceramic Bowl - Figure from Foodie Factor](images/preview.jpg){width=60% .external}
 
