@@ -1,0 +1,22 @@
+---
+title: "Different methods to sample a population"
+description: |
+  Some interesting sampling methods, each with its own merits and demerits.
+author:
+  - name: Siddharth Venu
+    url: https://www.linkedin.com/in/sidvenu/
+date: 06-29-2019
+output:
+  distill::distill_article:
+    self_contained: false
+draft: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
