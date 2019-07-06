@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = FALSE)
 library(DiagrammeR)
 ```
 
-There are mainly four different types of sampling
+There are mainly three different types of sampling
 
 * Simple Random Sampling (SRS)
 * Stratified Sampling

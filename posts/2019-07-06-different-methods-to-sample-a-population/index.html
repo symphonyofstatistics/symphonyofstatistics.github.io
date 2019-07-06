@@ -1374,7 +1374,7 @@ d-article h2 {
 </div>
 
 <div class="d-article">
-<p>There are mainly four different types of sampling</p>
+<p>There are mainly three different types of sampling</p>
 <ul>
 <li>Simple Random Sampling (SRS)</li>
 <li>Stratified Sampling</li>
@@ -1415,20 +1415,20 @@ If not, it is called <strong>Disproportionate Stratified Sampling</strong>.
 <h3 id="simple-cluster-sampling">Simple Cluster Sampling</h3>
 <p>Similar to One-stage cluster Sampling, but after choosing the clusters, we <strong>don’t</strong> select all the elements inside the selected clusters, but rather apply Simple Random Sampling to select a constant number of cases from each cluster.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-0a23db02a1f78d2be9e1" style="width:624px;height:384px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-0a23db02a1f78d2be9e1">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Simple Cluster Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=5, width=2]        \n  firstStage [label = \"First stage: Each cluster has equal probability\\nof getting selected\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: A constant number of cases is selected from\\neach selected cluster. Therefore, cases in larger clusters\\nwill have less probability of getting selected\", tooltip = \"Second Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage;\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-fdaf00d3629d2311309d" style="width:624px;height:384px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-fdaf00d3629d2311309d">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Simple Cluster Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=5, width=2]        \n  firstStage [label = \"First stage: Each cluster has equal probability\\nof getting selected\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: A constant number of cases is selected from\\neach selected cluster. Therefore, cases in larger clusters\\nwill have less probability of getting selected\", tooltip = \"Second Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage;\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <h3 id="probability-proportional-to-size-pps-sampling">Probability Proportional to Size (PPS) Sampling</h3>
 <p>This is used when the cluster sizes are different. This is same as Simple Cluster Sampling, except in the first stage, each cluster will have a probability of getting selected proportional to its size.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-bcc898db51176174d85c" style="width:624px;height:384px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-bcc898db51176174d85c">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Probability Proportional to Size Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=5, width=2]        \n  firstStage [label = \"First stage: Each cluster has a probability of getting\\nselected proportional to its size\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: A constant number of cases is selected from\\neach selected cluster. Therefore, cases in larger clusters\\nwill have less probability of getting selected\", tooltip = \"Second Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage;\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-c774ac177c21ff9d3e09" style="width:624px;height:384px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c774ac177c21ff9d3e09">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Probability Proportional to Size Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=5, width=2]        \n  firstStage [label = \"First stage: Each cluster has a probability of getting\\nselected proportional to its size\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: A constant number of cases is selected from\\neach selected cluster. Therefore, cases in larger clusters\\nwill have less probability of getting selected\", tooltip = \"Second Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage;\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <h1 id="multistage-sampling">Multistage Sampling</h1>
 <p>This can be a complex form of clustering, involving various stages of sampling from the population. For example, the household surveys conducted by the Australian Bureau of Statistics use the following sampling method, with a metropolitan region as its population:<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
 <div class="layout-chunk" data-layout="l-body">
-<div id="htmlwidget-f5aa597909b2381d02d9" style="width:624px;height:384px;" class="grViz html-widget"></div>
-<script type="application/json" data-for="htmlwidget-f5aa597909b2381d02d9">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Multistage Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=7, width=3]        \n  firstStage [label = \"First stage: Selecting Collection Districts (CDs)\\nwithin the metropolitan area\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: Selecting blocks within the selected CDs\", tooltip = \"Second Stage\"]\n  thirdStage [label = \"Third stage: Selecting dwellings within the selected blocks\", tooltip = \"Third Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage -> thirdStage;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-6baecb509be5efaa8d44" style="width:624px;height:384px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6baecb509be5efaa8d44">{"x":{"diagram":"digraph {\n  graph [tooltip = \"Multistage Sampling\"]\n  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=7, width=3]        \n  firstStage [label = \"First stage: Selecting Collection Districts (CDs)\\nwithin the metropolitan area\", tooltip = \"First Stage\"]\n  secondStage [label = \"Second stage: Selecting blocks within the selected CDs\", tooltip = \"Second Stage\"]\n  thirdStage [label = \"Third stage: Selecting dwellings within the selected blocks\", tooltip = \"Third Stage\"]\n  # edge definitions with the node IDs\n  firstStage -> secondStage -> thirdStage;\n}\n","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
 </div>
 <p>This type of sampling is used by many states in the world for city-level surveys, since the cost of the data collection will be driven down drastically.</p>
 <h2 id="note">Note</h2>
