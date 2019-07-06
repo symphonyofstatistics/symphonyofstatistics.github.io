@@ -1,0 +1,8 @@
+digraph {
+  graph [tooltip = 'Simple Cluster Sampling']
+  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=5, width=2]        
+  firstStage [label = 'First stage: Each cluster has equal probability\nof getting selected', tooltip = 'First Stage']
+  secondStage [label = 'Second stage: A constant number of cases is selected from\neach selected cluster. Therefore, cases in larger clusters\nwill have less probability of getting selected', tooltip = 'Second Stage']
+  # edge definitions with the node IDs
+  firstStage -> secondStage;
+}

@@ -1,0 +1,10 @@
+digraph {
+  graph [tooltip = 'Multistage Sampling']
+  node [fontname = Helvetica, shape = rectangle, fixedsize=true, fontsize=7, width=3]        
+  firstStage [label = 'First stage: Selecting Collection Districts (CDs)\nwithin the metropolitan area', tooltip = 'First Stage']
+  secondStage [label = 'Second stage: Selecting blocks within the selected CDs', tooltip = 'Second Stage']
+  thirdStage [label = 'Third stage: Selecting dwellings within the selected blocks', tooltip = 'Third Stage']
+  # edge definitions with the node IDs
+  firstStage -> secondStage -> thirdStage;
+}
+

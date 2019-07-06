@@ -1,0 +1,111 @@
+---
+title: "Different methods to sample a population"
+description: |
+  Some interesting sampling methods, each with its own merits and demerits.
+author:
+  - name: Siddharth Venu
+    url: https://www.linkedin.com/in/sidvenu/
+date: 07-06-2019
+creative_commons: CC BY-NC
+repository_url: https://github.com/symphonywithstatistics/symphonywithstatistics.github.io
+base_url: https://symphonyofstatistics.ml/
+preview: images/preview.jpg
+output:
+  distill::distill_article:
+    self_contained: false
+categories:
+  - sampling
+  - simple random sampling
+  - stratified sampling
+  - cluster sampling
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(DiagrammeR)
+```
+
+There are mainly four different types of sampling
+
+* Simple Random Sampling (SRS)
+* Stratified Sampling
+* Cluster Sampling
+  + One-stage Cluster Sampling
+  + Two-stage Cluster Sampling
+    * Simple Cluster Sampling
+    * Probability Proportional to Size (PPS) Sampling
+  + Multistage Sampling
+
+## Simple Ramdom Sampling (SRS)
+
+Select a sample of a specific size with *absolute* randomness, with each case in the population having an equal probability of getting picked. This type of sampling is called **Simple Random Sampling**.
+
+### Example
+
+Consider a lottery where we have to select 5 winners. The people who bought lottery tickets form the population. The winners form the sample, which is *sampled* from the population.
+
+If the lottery winners are picked randomly from the population with each person in the population having equal probability of winning, then the method employed is called Simple Random Sampling.
+
+## Stratified Sampling
+
+In this method, we divide the population into **strata** (singular: *stratum*) based on some quality that they exhibit. A stratum represents a group that has a particular quality in the population. Say male stratum and female stratum, for simplicity.
+
+Let us say we have (the strata) **200** males and **800** females in the population. We randomly sample from each stratum a number of people that is *proportionate* to the stratum's size. So if our sample size is **100** people, we will have to ramdomly sample **20** people from the male stratum and **80** people from the female stratum.
+
+<aside>
+If the number of people sampled from each stratum is proportionate to the stratum's size, it is called **Proportionate Stratified Sampling**.
+
+If not, it is called **Disproportionate Stratified Sampling**.
+</aside>
+
+This method is basically dividing the population based on the strata, and sampling from each strata a number of people that is proportionate to the stratum's size using Simple Random Sampling.
+
+Hence, the each stratum within itself is homogeneous, and across strata heterogeneous (internally homogeneous, externally heterogeneous).
+
+Since the sample consists of people that are proportionate to the population's strata, the sample's strata will be more representative of each corresponding population stratum, and thus the population itself. This allows us to achieve **higher statistical precision** than that of Simple Random Sampling.
+
+## Cluster Sampling
+
+# One-stage Cluster Sampling
+
+In One-stage Cluster Sampling, you divide the population into different clusters that are internally heterogeneous and externally homogeneous. Thus, each cluster is, to an extent, representative of the population.
+
+Then, a certain number of clusters is *randomly* selected from within this population, and these clusters form the sample.
+
+### Example
+
+Let us say you want to calculate the average housing prices in Chennai, and each neighbourhood is a cluster. You randomly select a few neighbourhoods in the city, and sample *all* the houses inside those neighbourhoods. In this way, the selected sample will be representative of the population i.e., all the houses in Chennai.
+
+The survey cost for Cluster Sampling is lesser than Simple Random Sampling *in this case*, since in SRS you most likely have to go to many parts of the city more than in case of Cluster Sampling.
+
+# Two-stage Cluster Sampling
+
+### Simple Cluster Sampling
+
+Similar to One-stage cluster Sampling, but after choosing the clusters, we **don't** select all the elements inside the selected clusters, but rather apply Simple Random Sampling to select a constant number of cases from each cluster.
+
+```{r SCSFlowchart}
+grViz("scs.dot")
+```
+
+### Probability Proportional to Size (PPS) Sampling
+
+This is used when the cluster sizes are different. This is same as Simple Cluster Sampling, except in the first stage, each cluster will have a probability of getting selected proportional to its size.
+
+```{r PPSFlowchart}
+grViz("pps.dot")
+```
+
+# Multistage Sampling
+
+This can be a complex form of clustering, involving various stages of sampling from the population. For example, the household surveys conducted by the Australian Bureau of Statistics use the following sampling method, with a metropolitan region as its population:^[[Australian Bureau of Statistics](https://www.abs.gov.au/AUSSTATS/abs@.nsf/Latestproducts/25EBCE8C88824592CA25710E007321C3?opendocument)]
+
+```{r MultiStageFlowchart}
+grViz("multistage.dot")
+```
+
+This type of sampling is used by many states in the world for city-level surveys, since the cost of the data collection will be driven down drastically.
+
+## Note
+
+Cluster Sampling reduces the cost of conducting the survey, when compared to methods like Simple Random Sampling and Stratified Sampling. However, Cluster Sampling and its different types are considered to be less accurate than Simple Random Sampling and Stratified Sampling.

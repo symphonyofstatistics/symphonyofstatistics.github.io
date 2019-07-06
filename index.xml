@@ -12,7 +12,16 @@
       <link>https://symphonyofstatistics.ml/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 26 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Different methods to sample a population</title>
+      <dc:creator>Siddharth Venu</dc:creator>
+      <link>https://symphonyofstatistics.ml/posts/2019-07-06-different-methods-to-sample-a-population</link>
+      <description>Some interesting sampling methods, each with its own merits and demerits.</description>
+      <guid>https://symphonyofstatistics.ml/posts/2019-07-06-different-methods-to-sample-a-population</guid>
+      <pubDate>Sat, 06 Jul 2019 00:00:00 +0000</pubDate>
+      <media:content url="https://symphonyofstatistics.ml/posts/2019-07-06-different-methods-to-sample-a-population/images/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Generalization and Causation</title>
       <dc:creator>Siddharth Venu</dc:creator>
